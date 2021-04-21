@@ -18,7 +18,10 @@
     <div id="app">
 
 
-        <section class="slider">
+        <section class="slider"
+            @mouseenter="stopLoop"
+            @mouseleave="startLoop"
+        >
 
             <div class="prev" @click="prevPhoto">
                 <div class="fas fa-arrow-left"></div>
@@ -33,10 +36,11 @@
             </div>
 
             <div class="nav">
-                <i class="fas fa-circle active"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
+                <i v-for="(photo, index) in photos"
+                    class="fas fa-circle"
+                    :class="{ active: index == indexPhoto }"
+                    @click="setPhoto(index)"
+                ></i>
             </div>
 
         </section>

@@ -20,15 +20,15 @@
 
         <section class="slider">
 
-            <div class="prev">
+            <div class="prev" @click="prevPhoto">
                 <div class="fas fa-arrow-left"></div>
             </div>
 
             <div class="images">
-                <img src="./immagini/img1.jpg" alt="sfondo1">
+                <img :src="photos[indexPhoto]" alt="sfondo">
             </div>
 
-            <div class="next">
+            <div class="next" @click="nextPhoto">
                 <div class="fas fa-arrow-right"></div>
             </div>
 

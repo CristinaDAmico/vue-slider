@@ -7,6 +7,11 @@
 /* SLIDER */
 .slider {
     position: relative;
+    outline: none;
+}
+
+.slider:focus {
+    border: 3px solid dodgerblue;
 }
 
 .slider .images {

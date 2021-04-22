@@ -21,6 +21,11 @@
         <section class="slider"
             @mouseenter="stopLoop"
             @mouseleave="startLoop"
+           
+            @keyup.left="prevPhoto"
+            @keyup.right="nextPhoto"
+            tabindex="0"
+            ref="slider"
         >
 
             <div class="prev" @click="prevPhoto">

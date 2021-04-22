@@ -15,10 +15,9 @@ const app = new Vue({
         indexPhoto: 0,
         intervalID: 0,
     },
-    created() {
+    mounted() {    //created(avviene appena creata l'istanza) => mounted(ultima azione che fa in creazione l'istanza)
         // Create l'istanza vue
         this.startLoop();
-
     },
     methods: {
         prevPhoto() {
@@ -44,9 +43,15 @@ const app = new Vue({
             this.intervalID = setInterval(() => {
                 this.nextPhoto();
             }, 3000);
+
+            this.$refs.slider.blur(); //tolgo il focus dall'elemento
         },
         stopLoop () {
             clearInterval(this.intervalID);
+
+            // Mettere focus slider
+            console.log(this.$refs);
+            this.$refs.slider.focus(); //metto il focus sull'elemento
         }
     }
 });
